@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="Mascotas_API-1.0-SNAPSHOT.war">
+    <root id="archive" name="Mascotas_API-1.0.war">
       <element id="artifact" artifact-name="Mascotas_API:war exploded" />
     </root>
   </artifact>
