@@ -1,14 +1,14 @@
 package com.ubosque.api;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
-@Path("/test")
+@Path("/micro")
 public class MicrochipResource {
 
-    @G
-    @Produces("text/plain")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public String hello() {
         return "Hello, World from other class!";
     }
