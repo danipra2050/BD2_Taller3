@@ -11,24 +11,27 @@ import com.ubosque.geolocation.PetGeolocation;
 import com.ubosque.geolocation.Properties;
 import com.ubosque.interfaces.IMicrochip;
 import com.ubosque.model.MicrochipModel;
+import com.ubosque.model.RequestVitalModel;
 import org.bson.Document;
 import redis.clients.jedis.Jedis;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class MicrochipController implements IMicrochip {
 
     //Attributes
-    private MongoConnection mongoConn = new MongoConnection();
-    private RedisConnection redisConn = new RedisConnection();
+    private final MongoConnection mongoConn = new MongoConnection();
+    private final RedisConnection redisConn = new RedisConnection();
 
     @Override
     public void createChip(MicrochipModel microchipData) {
         try {
             mongoConn.getMongoCollection().insertOne(new Document()
-                    .append("timestamp", microchipData.getTimestamp())
+                    .append("timestamp", new Timestamp(new Date().getTime()))
                     .append("microchip", microchipData.getMicrochip())
                     .append("pateName", microchipData.getPateName())
                     .append("ownerName", microchipData.getOwnerName())
@@ -96,5 +99,14 @@ public class MicrochipController implements IMicrochip {
         return petGeolocation;
     }
 
-
+    @Override
+    public ArrayList<MicrochipModel> getVitalSigns(RequestVitalModel requestVital) {
+        ArrayList<MicrochipModel> microList = new ArrayList<>();
+        try{
+            mongoConn.getMongoCollection().find();
+        }catch(Exception ex){
+            Logger.getLogger("getVitalSigns: " + ex.getMessage());
+        }
+        return microList;
+    }
 }

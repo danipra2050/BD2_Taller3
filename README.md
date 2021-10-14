@@ -1,5 +1,5 @@
 # BD2 Taller 3
-Requerimiento 1: Creaciòn de la informaciòn de la mascota en la base de datos MongoDB
+##Requerimiento 1: Creaciòn de la informaciòn de la mascota en la base de datos MongoDB
 Adjunto se encuentra el endpoint y el request necesario para este.
 
 Endpoint: http://localhost:7001/Mascotas_API-1.0/api/micro
@@ -20,6 +20,10 @@ Endpoint: http://localhost:7001/Mascotas_API-1.0/api/micro
 }
 }
 <br>Metodo: POST
+
+##Requerimiento 2: Generar geoJSON
+Method: GET
+Request-URL: http://localhost:7001/Mascotas_API-1.0/api/micro/getPetLocation?chip=123456789
 
 >Elaborado por: Daniela Prado Chaparro<br>
 > Ingenieria de Sistemas Nocturno

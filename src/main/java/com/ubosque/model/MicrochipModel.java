@@ -1,9 +1,11 @@
 package com.ubosque.model;
 
+import java.sql.Timestamp;
+
 public class MicrochipModel {
 
     //Attributes
-    private String timestamp;
+    private Timestamp timestamp;
     private String microchip;
     private String pateName;
     private String ownerName;
@@ -15,7 +17,7 @@ public class MicrochipModel {
     public MicrochipModel(){}
 
     //Constructor with parameters
-    public MicrochipModel(String timestamp, String microchip, String pateName, String ownerName,
+    public MicrochipModel(Timestamp timestamp, String microchip, String pateName, String ownerName,
                           String species, GeoModel geolocation, VitalSignsModel vitalSigns) {
         this.timestamp = timestamp;
         this.microchip = microchip;
@@ -26,11 +28,11 @@ public class MicrochipModel {
         this.vitalSigns = vitalSigns;
     }
 
-    public String getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 
